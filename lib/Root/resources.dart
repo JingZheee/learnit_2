@@ -14,7 +14,7 @@ class Resources extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Resources'),
-            TextButton(
+            ElevatedButton(
             onPressed: (){
               context.go('/resources/categories');
             }, 

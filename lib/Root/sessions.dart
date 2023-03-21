@@ -10,6 +10,7 @@ class Sessions extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Sessions'),
             

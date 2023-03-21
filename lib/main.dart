@@ -6,6 +6,7 @@ import 'package:learnit_2/Root/profile.dart';
 import 'package:learnit_2/Root/resources.dart';
 import 'package:learnit_2/Root/sessions.dart';
 import 'package:learnit_2/Screen/Resources/categories.dart';
+import 'package:learnit_2/Screen/Resources/notes.dart';
 import 'package:learnit_2/routes/ScafoldWithBottomNavBar.dart';
 
 void main() {
@@ -84,6 +85,12 @@ class MyApp extends StatelessWidget {
                 GoRoute(
                   path: 'categories',
                   builder: (context, state) => const Categories(),
+                  routes: [
+                    GoRoute(
+                      path: 'notes',
+                      builder: (context, state) => const Notes(),
+                    )
+                  ]
                 )
               ]
             ),

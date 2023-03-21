@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
 import '../../tools/SizeConfig.dart';
 
 class Categories extends StatelessWidget {
@@ -26,7 +27,7 @@ class Categories extends StatelessWidget {
                     fontSize: SizeConfig.safeBlockHorizontal! * 7.5,
                     fontWeight: FontWeight.bold,
                   ),
-                  ),
+                ),
                   SizedBox(height: SizeConfig.safeBlockVertical! * 3.5,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,6 +40,7 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            context.go('/resources/categories/notes');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -75,6 +77,7 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            context.pop();
                           },
                           child: SizedBox(
                            width: SizeConfig.safeBlockHorizontal! * 32.8,
