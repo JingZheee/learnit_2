@@ -7,9 +7,14 @@ import 'package:learnit_2/Root/resources.dart';
 import 'package:learnit_2/Root/sessions.dart';
 import 'package:learnit_2/Screen/Resources/categories.dart';
 import 'package:learnit_2/Screen/Resources/notes.dart';
+import 'package:learnit_2/Screen/Resources/pages.dart';
 import 'package:learnit_2/routes/ScafoldWithBottomNavBar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -88,7 +93,13 @@ class MyApp extends StatelessWidget {
                   routes: [
                     GoRoute(
                       path: 'notes',
-                      builder: (context, state) => const Notes(),
+                      builder: (context, state) =>  Notes(),
+                      routes: [
+                        GoRoute(
+                          path: 'pages',
+                          builder: (context, state) => const Pages(),
+                        )
+                      ]
                     )
                   ]
                 )
