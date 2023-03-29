@@ -6,8 +6,11 @@ import 'package:learnit_2/Root/profile.dart';
 import 'package:learnit_2/Root/resources.dart';
 import 'package:learnit_2/Root/sessions.dart';
 import 'package:learnit_2/Screen/Resources/categories.dart';
+import 'package:learnit_2/Screen/Resources/detailed_posting.dart';
+import 'package:learnit_2/Screen/Resources/forum.dart';
 import 'package:learnit_2/Screen/Resources/notes.dart';
 import 'package:learnit_2/Screen/Resources/pages.dart';
+import 'package:learnit_2/Screen/Resources/post_question.dart';
 import 'package:learnit_2/routes/ScafoldWithBottomNavBar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -58,7 +61,7 @@ class MyApp extends StatelessWidget {
       debugLogDiagnostics: true,
       routes: [
         ShellRoute(
-          navigatorKey: _shellNavigatorKey,
+          // navigatorKey: _shellNavigatorKey,
           builder: (context, state, child) {
             return ScaffoldWithBottomNavBar(tabs: tabs, child: child);
           },
@@ -92,14 +95,32 @@ class MyApp extends StatelessWidget {
                   builder: (context, state) => const Categories(),
                   routes: [
                     GoRoute(
-                      path: 'notes',
-                      builder: (context, state) =>  Notes(),
+                      path: 'notes/:subjects',
+                      builder: (context, state) =>  Notes(
+                        subjects: state.params["subjects"]!
+                      ),
                       routes: [
                         GoRoute(
                           path: 'pages',
                           builder: (context, state) => const Pages(),
                         )
                       ]
+                    )
+                  ]
+                ),
+                GoRoute(
+                  path: 'forum',
+                  builder: (context, state) => const Forum(),
+                  routes: [
+                    GoRoute(
+                      path: 'post',
+                      builder: (context, state) => const PostQuestion(),
+                    ),
+                    GoRoute(
+                      path: 'comment/:title/:description',
+                      builder: (context, state) => DetailedPost(
+                        questionTitle: state.params['title']!,
+                        questionDescription: state.params['description']!,),
                     )
                   ]
                 )

@@ -19,6 +19,12 @@ class Resources extends StatelessWidget {
               context.go('/resources/categories');
             }, 
             child: const Text('Resources')
+            ),
+            ElevatedButton(
+            onPressed: (){
+              context.go('/resources/forum');
+            }, 
+            child: const Text('Forum')
             )
           ],
         ),

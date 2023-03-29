@@ -5,9 +5,15 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:go_router/go_router.dart';
 import '../../tools/SizeConfig.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({super.key});
+class Categories extends StatefulWidget {
+   const Categories({super.key});
 
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  String subjects = " ";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -40,7 +46,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
-                            context.go('/resources/categories/notes');
+                            setState(() {
+                              subjects = "maths";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -77,7 +86,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
-                            context.pop();
+                            setState(() {
+                              subjects = "chemistry";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                            width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -119,6 +131,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "physic";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -155,6 +171,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "add maths";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -196,6 +216,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "biology";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -232,6 +256,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "history";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -273,6 +301,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "music";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,
@@ -309,6 +341,10 @@ class Categories extends StatelessWidget {
                         ),
                         child: InkWell(   
                           onTap: (){
+                            setState(() {
+                              subjects = "art";
+                            });
+                            context.go('/resources/categories/notes/$subjects');
                           },
                           child: SizedBox(
                             width: SizeConfig.safeBlockHorizontal! * 32.8,

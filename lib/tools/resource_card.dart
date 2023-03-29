@@ -9,13 +9,15 @@ class ResourcesCard extends StatelessWidget {
   final String tutor;
   final int likes;
   final int downloads;
+  final String subjects;
 
   const ResourcesCard(
       {super.key,
       required this.title,
       required this.tutor,
       required this.likes,
-      required this.downloads});
+      required this.downloads,
+      required this.subjects});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class ResourcesCard extends StatelessWidget {
           ),
           child: InkWell(
             onTap: (){
-              context.go('/resources/categories/notes/pages');
+              context.go('/resources/categories/notes/$subjects/pages');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
