@@ -11,6 +11,7 @@ import 'package:learnit_2/Screen/Resources/forum.dart';
 import 'package:learnit_2/Screen/Resources/notes.dart';
 import 'package:learnit_2/Screen/Resources/pages.dart';
 import 'package:learnit_2/Screen/Resources/post_question.dart';
+import 'package:learnit_2/Screen/Resources/post_resources.dart';
 import 'package:learnit_2/routes/ScafoldWithBottomNavBar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -103,6 +104,10 @@ class MyApp extends StatelessWidget {
                         GoRoute(
                           path: 'pages',
                           builder: (context, state) => const Pages(),
+                        ),
+                        GoRoute(
+                          path: 'add',
+                          builder: (context, state) => const PostResources(),
                         )
                       ]
                     )

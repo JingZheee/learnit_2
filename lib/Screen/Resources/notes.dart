@@ -181,7 +181,9 @@ class _NotesState extends State<Notes> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){}, 
+        onPressed: (){
+          context.go('/resources/categories/notes/$subjects/add');
+        }, 
         backgroundColor:  Color(0XFF9F9DF3),
         child: const Icon(
           Icons.add,

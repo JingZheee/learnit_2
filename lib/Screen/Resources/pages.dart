@@ -124,7 +124,8 @@ class Pages extends StatelessWidget {
     floatingActionButton: Container(
       width: SizeConfig.blockSizeHorizontal! * 60,
       child: FloatingActionButton.extended(
-        onPressed: (){},
+        onPressed: (){
+        },
         label: Text('Play'),
         backgroundColor: Color(0XFF9F9DF3),
         ),
